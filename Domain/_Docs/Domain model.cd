@@ -13,6 +13,7 @@
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\UniqueEntity.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportEvents.Domain.Common.NamedEntity&lt;T&gt;">
     <Position X="3.75" Y="0.5" Width="1.5" />
@@ -20,6 +21,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\NamedEntity.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportEvents.Domain.Common.BaseEntity">
     <Position X="11.5" Y="0.5" Width="1.5" />
@@ -41,7 +43,7 @@
   <Class Name="SportEvents.Domain.EventRegistration">
     <Position X="8.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAKAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAgAAAAAAAAAAAAAAAAAgAAAAAAAKAAAAAAAAA=</HashCode>
       <FileName>EventRegistration.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>

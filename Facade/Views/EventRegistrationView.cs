@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using AidMethods;
 
 namespace SportEvents.Facade.Views
 {
