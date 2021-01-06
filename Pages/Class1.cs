@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pages
+﻿namespace SportEvents.Pages
 {
     public class Class1
     {

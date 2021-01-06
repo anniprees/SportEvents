@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain
+﻿namespace SportEvents.Domain
 {
     public class Class1
     {

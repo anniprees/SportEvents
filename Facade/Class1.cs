@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Facade
+﻿namespace SportEvents.Facade
 {
     public class Class1
     {
