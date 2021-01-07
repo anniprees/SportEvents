@@ -1,0 +1,13 @@
+﻿@page
+@model SportEvents.WebApplication.Pages.Events.DeleteModel
+
+@{
+    Layout = "_Delete";
+}
+
+<body>
+@Html.DisplayFor(m => m.Item.Id)
+@Html.DisplayFor(m => m.Item.SportsCategory, Model.GetCategoryName(Model.Item.SportsCategory))
+@Html.DisplayFor(m => m.Item.EventDate)
+@Html.DisplayFor(m => m.Item.EventTime)
+</body>

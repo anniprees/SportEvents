@@ -1,0 +1,16 @@
+﻿@page
+@model SportEvents.WebApplication.Pages.Events.DetailsModel
+
+@{
+    Layout = "_Details";
+}
+
+<body>
+    @Html.DisplayFor(m => m.Item.Id)
+    @Html.DisplayFor(m => m.Item.SportsCategory, Model.GetCategoryName(Model.Item.SportsCategory))
+    @Html.DisplayFor(m => m.Item.EventDate)
+    @Html.DisplayFor(m => m.Item.EventTime)
+</body>
+
+@section Details {
+}

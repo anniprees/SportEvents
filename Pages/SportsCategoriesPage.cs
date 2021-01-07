@@ -17,6 +17,8 @@ namespace SportEvents.Pages
             PageTitle = "Sports categories";
         }
 
+        public override string ItemId => Item?.Id ?? string.Empty;
+
         protected internal override string GetPageUrl() => "/Sport/Categories";
 
         protected internal override SportsCategory ToObject(SportsCategoryView view) => SportsCategoryViewFactory.Create(view);

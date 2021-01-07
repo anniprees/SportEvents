@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<p>
+    <h1>@ViewData["Title"]</h1>
+    <h4>@Model.PageSubTitle</h4>
+    @RenderSection("Create")
+</p>
+
+<form asp-page="./Index" method="get">
+</form>
+
+<p />
+
+@RenderBody()
+

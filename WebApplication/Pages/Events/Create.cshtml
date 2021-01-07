@@ -1,0 +1,14 @@
+﻿@page
+@using SportEvents.Pages.Extensions
+@model SportEvents.WebApplication.Pages.Events.CreateModel
+
+@{
+    Layout = "_Create";
+}
+
+<body>
+@Html.EditorFor(m => m.Item.Id)@Html.EditorFor(m => m.Item.Id)
+@Html.EditControlsForDropDown(m => m.Item.SportsCategory, Model.Categories)
+@Html.EditorFor(m => m.Item.Id)@Html.EditorFor(m => m.Item.EventDate)
+@Html.EditorFor(m => m.Item.Id)@Html.EditorFor(m => m.Item.EventTime)
+</body>

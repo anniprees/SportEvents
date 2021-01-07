@@ -17,6 +17,8 @@ namespace SportEvents.Pages
             PageTitle = "Participants";
         }
 
+        public override string ItemId => Item?.Id ?? string.Empty;
+
         protected internal override string GetPageUrl() => "/Sport/Participants";
 
         protected internal override Participant ToObject(ParticipantView view) => ParticipantViewFactory.Create(view);

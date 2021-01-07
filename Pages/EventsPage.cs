@@ -23,6 +23,8 @@ namespace SportEvents.Pages
             Categories = CreateSelectList<SportsCategory, SportsCategoryData>(s);
         }
 
+        public override string ItemId => Item?.Id ?? string.Empty;
+
         protected internal override string GetPageUrl() => "/Sport/Events";
 
         protected internal override Event ToObject(EventView view) => EventViewFactory.Create(view);

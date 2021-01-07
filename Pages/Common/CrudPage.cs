@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,8 @@ namespace SportEvents.Pages.Common
         [BindProperty]
         public TView Item { get; set; }
 
+        public IList<TView> Items { get; private set; }
+
         protected internal async Task<bool> AddObject()
         {
             if (!ModelState.IsValid) return false;
@@ -40,6 +43,18 @@ namespace SportEvents.Pages.Common
         {
             var o = await db.Get(id).ConfigureAwait(true);
             Item = ToView(o);
+        }
+
+        //protected internal async Task GetList()
+        //{
+        //    Items = await GetList();
+        //}
+
+        protected internal async Task<List<TView>> GetList()
+        {
+            var l = await db.Get();
+
+            return l.Select(ToView).ToList();
         }
 
         protected internal async Task DeleteObject(string id)
