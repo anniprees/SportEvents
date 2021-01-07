@@ -11,14 +11,14 @@ using SportEvents.Pages.Common;
 
 namespace SportEvents.Pages
 {
-    public abstract class EventRegistrationsPage : CommonPage<IEventRegistration, EventRegistration, EventRegistrationView, EventRegistrationData>
+    public abstract class EventRegistrationsPage : CommonPage<IEventRegistrationsRepository, EventRegistration, EventRegistrationView, EventRegistrationData>
     {
         public IEnumerable<SelectListItem> Events { get; }
 
         public IEnumerable<SelectListItem> Participants { get; }
 
 
-        protected EventRegistrationsPage(IEventRegistration r, IEventsRepository e, IParticipant p) : base(r)
+        protected EventRegistrationsPage(IEventRegistrationsRepository r, IEventsRepository e, IParticipantsRepository p) : base(r)
         {
             PageTitle = "Registrations";
             Events = CreateSelectList<Event, EventData>(e);

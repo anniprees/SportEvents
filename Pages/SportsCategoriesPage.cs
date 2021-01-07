@@ -10,9 +10,9 @@ using SportEvents.Pages.Common;
 
 namespace SportEvents.Pages
 {
-    public abstract class SportsCategoriesPage : CommonPage<ISportsCategory, SportsCategory, SportsCategoryView, SportsCategoryData>
+    public abstract class SportsCategoriesPage : CommonPage<ISportsCategoriesRepository, SportsCategory, SportsCategoryView, SportsCategoryData>
     {
-        protected SportsCategoriesPage(ISportsCategory r) : base(r)
+        protected SportsCategoriesPage(ISportsCategoriesRepository r) : base(r)
         {
             PageTitle = "Sports categories";
         }

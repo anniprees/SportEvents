@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SportEvents.Domain.Interfaces;
+using SportEvents.Infra;
+using SportEvents.Infra.Repositories;
+using SportEvents.WebApplication.Data;
 
-namespace WebApplication
+namespace SportEvents.WebApplication
 {
     public class Startup
     {
@@ -23,7 +23,18 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<EventsDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddRazorPages();
+            services.AddScoped<IEventsRepository, EventsRepository>();
+            //services.AddScoped<IParticipantsRepository, ParticipantsRepository>();
+            //services.AddScoped<ISportsCategoriesRepository, SportsCategoriesRepository>();
+            //services.AddScoped<IEventRegistrationsRepository, EventRegistrationsRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

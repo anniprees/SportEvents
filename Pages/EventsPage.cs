@@ -16,7 +16,7 @@ namespace SportEvents.Pages
     {
         public IEnumerable<SelectListItem> Categories { get; }
 
-        protected internal EventsPage(IEventsRepository e, ISportsCategory s)
+        protected internal EventsPage(IEventsRepository e, ISportsCategoriesRepository s)
             : base(e)
         {
             PageTitle = "Sport events";

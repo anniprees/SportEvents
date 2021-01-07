@@ -10,9 +10,9 @@ using SportEvents.Pages.Common;
 
 namespace SportEvents.Pages
 {
-    public abstract class ParticipantsPage : CommonPage<IParticipant, Participant, ParticipantView, ParticipantData>
+    public abstract class ParticipantsPage : CommonPage<IParticipantsRepository, Participant, ParticipantView, ParticipantData>
     {
-        protected ParticipantsPage(IParticipant r) : base(r)
+        protected ParticipantsPage(IParticipantsRepository r) : base(r)
         {
             PageTitle = "Participants";
         }
