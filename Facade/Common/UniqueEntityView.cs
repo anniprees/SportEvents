@@ -7,5 +7,6 @@ namespace SportEvents.Facade.Common
     {
         protected UniqueEntityView() => Id = Guid.NewGuid().ToString();
         [Required] public string Id { get; set; }
+
     }
 }

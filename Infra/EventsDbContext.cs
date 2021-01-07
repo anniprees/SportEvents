@@ -1,8 +1,7 @@
-﻿using System.Security.Cryptography;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SportEvents.Data;
 
-namespace Abc.Infra
+namespace SportEvents.Infra
 {
     public class EventsDbContext : DbContext
     {

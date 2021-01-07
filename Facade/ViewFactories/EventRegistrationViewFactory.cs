@@ -5,7 +5,7 @@ using SportEvents.Facade.Views;
 
 namespace SportEvents.Facade.ViewFactories
 {
-    public static class EventRegistrationRegistrationViewFactory
+    public static class EventRegistrationViewFactory
     {
         public static EventRegistration Create(EventRegistrationView v)
         {

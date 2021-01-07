@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Abc.Infra;
 using SportEvents.Data;
 using SportEvents.Domain;
 using SportEvents.Infra.Common;
