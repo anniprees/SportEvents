@@ -5,18 +5,39 @@ namespace AidMethods
     public static class Safe
     {
         private static readonly object key = new object();
-        
+
+        public static T Run<T>(Func<T> function, T valueOnException,
+            bool useLock = false)
+        {
+            return useLock
+                ? lockedRun(function, valueOnException)
+                : run(function, valueOnException);
+        }
+
         public static void Run(Action action, bool useLock = false)
         {
             if (useLock) lockedRun(action);
             else run(action);
         }
 
-        private static void lockedRun(Action action)
+        private static T run<T>(Func<T> function, T valueOnException)
+        {
+            try
+            {
+                return function();
+            }
+            catch (Exception e)
+            {
+                Log.Exception(e);
+                return valueOnException;
+            }
+        }
+
+        private static T lockedRun<T>(Func<T> function, T valueOnException)
         {
             lock (key)
             {
-                run(action);
+                return run(function, valueOnException);
             }
         }
 
@@ -32,6 +53,13 @@ namespace AidMethods
             }
         }
 
+        private static void lockedRun(Action action)
+        {
+            lock (key)
+            {
+                run(action);
+            }
+        }
     }
 
 }

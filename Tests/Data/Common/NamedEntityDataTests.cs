@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SportEvents.Data.Common;
 
 namespace Tests.Data.Common
 {
     [TestClass]
-    public class NamedEntityDataTests
+    public class NamedEntityDataTests : AbstractClassTests<NamedEntityData, UniqueEntityData>
     {
         private class TestClass : NamedEntityData { }
 
         [TestInitialize]
-        public void TestInitialize()
+        public override void TestInitialize()
         {
+            base.TestInitialize();
+            obj = new TestClass();
         }
 
         [TestMethod]
-        public void IdTest()
-        {
-
-        }
+        public void NameTest()
+            => IsNullableProperty(() => obj.Name, x => obj.Name = x);
     }
 }
+
+

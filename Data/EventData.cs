@@ -7,9 +7,9 @@ namespace SportEvents.Data
 {
     public sealed class EventData : NamedEntityData
     {
-        public DateTime EventDate { get; set; }
+        public DateTime? EventDate { get; set; }
 
-        public DateTime EventTime { get; set; }
+        public DateTime? EventTime { get; set; }
 
         public string SportsCategoryId { get; set; }
     }
