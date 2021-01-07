@@ -2,9 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using SportEvents.Data.Common;
 using SportEvents.Domain.Common;
-using SportEvents.Domain.Interfaces;
 
-namespace SportEvents.Infra
+namespace SportEvents.Infra.Common
 {
     public abstract class UniqueEntitiesRepository<TDomain, TData> : BaseRepository<TDomain, TData>
         where TDomain : ValueObject<TData>

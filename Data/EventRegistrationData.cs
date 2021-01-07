@@ -1,6 +1,8 @@
-﻿namespace SportEvents.Data
+﻿using SportEvents.Data.Common;
+
+namespace SportEvents.Data
 {
-    public sealed class EventRegistrationData
+    public sealed class EventRegistrationData : UniqueEntityData
     {
         public string EventId { get; set; }
 

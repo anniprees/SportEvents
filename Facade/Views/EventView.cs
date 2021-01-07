@@ -9,7 +9,7 @@ namespace SportEvents.Facade.Views
     {
         [Required] [DisplayName("Date")] public DateTime EventDate { get; set; }
         [DisplayName("Time")] public DateTime EventTime { get; set; }
-        [DisplayName("Spots available")] public string SportsCategory { get; set; }
+        [DisplayName("Sports category")] public string SportsCategory { get; set; }
 
     }
 }

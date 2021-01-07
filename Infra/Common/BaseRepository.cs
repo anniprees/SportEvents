@@ -7,7 +7,7 @@ using SportEvents.Data.Common;
 using SportEvents.Domain.Common;
 using SportEvents.Domain.Interfaces;
 
-namespace SportEvents.Infra 
+namespace SportEvents.Infra.Common 
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
         where TDomain : ValueObject<TData>

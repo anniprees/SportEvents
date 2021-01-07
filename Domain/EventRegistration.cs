@@ -5,7 +5,7 @@ using SportEvents.Domain.Common;
 
 namespace SportEvents.Domain
 {
-    public sealed class EventRegistration : ValueObject<EventRegistrationData>
+    public sealed class EventRegistration : UniqueEntity<EventRegistrationData>
     {
         public EventRegistration(EventRegistrationData d) : base(d) { }
 
