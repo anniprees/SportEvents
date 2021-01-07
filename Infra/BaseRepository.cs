@@ -4,12 +4,13 @@ using System.Threading.Tasks;
 using AidMethods;
 using Microsoft.EntityFrameworkCore;
 using SportEvents.Data.Common;
+using SportEvents.Domain.Common;
 using SportEvents.Domain.Interfaces;
 
 namespace SportEvents.Infra 
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
-        where TDomain : IUniqueEntity<TData>
+        where TDomain : ValueObject<TData>
         where TData : UniqueEntityData, new() {
 
         protected internal DbContext db;
