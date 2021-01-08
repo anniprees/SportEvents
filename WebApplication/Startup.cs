@@ -30,11 +30,15 @@ namespace SportEvents.WebApplication
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddRazorPages();
-            services.AddScoped<IEventsRepository, EventsRepository>();
-            //services.AddScoped<IParticipantsRepository, ParticipantsRepository>();
-            //services.AddScoped<ISportsCategoriesRepository, SportsCategoriesRepository>();
-            //services.AddScoped<IEventRegistrationsRepository, EventRegistrationsRepository>();
+            RegisterRepositories(services);
+        }
 
+        private static void RegisterRepositories(IServiceCollection s)
+        {
+            s.AddScoped<IEventsRepository, EventsRepository>();
+            s.AddScoped<IParticipantsRepository, ParticipantsRepository>();
+            s.AddScoped<ISportsCategoriesRepository, SportsCategoriesRepository>();
+            s.AddScoped<IEventRegistrationsRepository, EventRegistrationsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

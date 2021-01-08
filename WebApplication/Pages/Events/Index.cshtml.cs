@@ -18,9 +18,9 @@ namespace SportEvents.WebApplication.Pages.Events
         public IndexModel(IEventsRepository e, ISportsCategoriesRepository s)
         : base(e, s) { }
 
-        public async Task<List<EventView>> OnGetAsync()
+        public async Task OnGetAsync()
         {
-            return await GetList();
+            await GetList();
         }
     }
 }

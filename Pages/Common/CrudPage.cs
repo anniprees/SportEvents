@@ -45,12 +45,12 @@ namespace SportEvents.Pages.Common
             Item = ToView(o);
         }
 
-        //protected internal async Task GetList()
-        //{
-        //    Items = await GetList();
-        //}
+        protected internal async Task GetList()
+        {
+            Items = await getList();
+        }
 
-        protected internal async Task<List<TView>> GetList()
+        protected internal async Task<List<TView>> getList()
         {
             var l = await db.Get();
 

@@ -8,11 +8,10 @@ using SportEvents.Domain.Interfaces;
 using SportEvents.Facade.ViewFactories;
 using SportEvents.Facade.Views;
 using SportEvents.Pages.Common;
-using EventData = Microsoft.EntityFrameworkCore.Diagnostics.EventData;
 
 namespace SportEvents.Pages
 {
-    public abstract class EventsPage : CommonPage<IEventsRepository, Event, EventView, EventData>
+    public class EventsPage : CommonPage<IEventsRepository, Event, EventView, EventData>
     {
         public IEnumerable<SelectListItem> Categories { get; }
 
