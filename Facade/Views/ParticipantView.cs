@@ -6,7 +6,8 @@ namespace SportEvents.Facade.Views
 {
     public sealed class ParticipantView : NamedEntityView
     {
-        [Required] public string Email { get; set; }
+        [Required]
+        [DisplayName("Email")] public string Email { get; set; }
         [DisplayName("Phone Number")]public string PhoneNumber { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace SportEvents.Domain
         public Event (EventData d ) : base(d){}
 
         public DateTime EventDate => Data?.EventDate ?? UnspecifiedDate;
-        public DateTime EventTime => Data?.EventDate ?? UnspecifiedDate;
+        public DateTime EventTime => Data?.EventTime ?? UnspecifiedDate;
         public string SportsCategoryId => Data?.SportsCategoryId ?? Unspecified;
 
         public SportsCategory SportsCategory { get; set; }

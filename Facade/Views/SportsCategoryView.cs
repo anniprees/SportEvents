@@ -5,6 +5,7 @@ namespace SportEvents.Facade.Views
 {
     public sealed class SportsCategoryView : NamedEntityView
     {
+        [DisplayName("Location")] 
         public string Location { get; set; }
 
         [DisplayName("Number of spots")]
