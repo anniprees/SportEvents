@@ -26,10 +26,10 @@
             @Html.DisplayFor(m => m.Item.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(m => m.Item.SportsCategory)
+            @Html.DisplayNameFor(m => m.Item.SportsCategoryId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayControlsFor(m => m.Item.SportsCategory, Model.GetCategoryName(Model.Item.SportsCategory))
+            @Html.DisplayControlsFor(m => m.Item.SportsCategoryId, Model.GetCategoryName(Model.Item.SportsCategoryId))
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(m => m.Item.EventDate)

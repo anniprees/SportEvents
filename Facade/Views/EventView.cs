@@ -15,7 +15,7 @@ namespace SportEvents.Facade.Views
         public DateTime? EventTime { get; set; }
 
         [DisplayName("Sports category")] 
-        public string SportsCategory { get; set; }
+        public string SportsCategoryId { get; set; }
 
         [DisplayName("Location")]
         public string Location { get; set; }

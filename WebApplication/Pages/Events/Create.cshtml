@@ -29,7 +29,7 @@
             <input asp-for="@Model.Item.SportsCategory" class="form-control" />
             <span asp-validation-for="@Model.Item.SportsCategory" class="text-danger"></span>
         </div>*@
-            @Html.EditControlsForDropDown(m => m.Item.SportsCategory, Model.Categories)
+            @Html.EditControlsForDropDown(m => m.Item.SportsCategoryId, Model.Categories)
             <div class="form-group">
                 <label asp-for="@Model.Item.EventDate" class="control-label"></label>
                 <input asp-for="@Model.Item.EventDate" class="form-control" />
