@@ -7,9 +7,5 @@ namespace SportEvents.Domain
     {
         public SportsCategory(SportsCategoryData d) : base(d) { }
 
-        public string Location => Data?.Location ?? Unspecified;
-
-        public int MaxParticipants => Data?.MaxParticipants ?? UnspecifiedInteger;
-
     }
 }

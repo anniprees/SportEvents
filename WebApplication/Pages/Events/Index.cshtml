@@ -2,10 +2,10 @@
 @model SportEvents.WebApplication.Pages.Events.IndexModel
 
 @{
-    Layout = "_Index";
-    var page = Model.PageUrl;
-
+    ViewData["Title"] = "Index";
 }
+
+<h1>Events</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -25,29 +25,42 @@
             <th>
                 @Html.DisplayNameFor(m => m.Item.EventTime)
             </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Item.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Item.MaxParticipants)
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Items) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.Raw(Model.GetCategoryName(item.SportsCategory))
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventTime)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.Raw(Model.GetCategoryName(item.SportsCategory))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxParticipants)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

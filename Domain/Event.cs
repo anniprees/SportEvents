@@ -12,6 +12,10 @@ namespace SportEvents.Domain
         public DateTime EventTime => Data?.EventTime ?? UnspecifiedDate;
         public string SportsCategoryId => Data?.SportsCategoryId ?? Unspecified;
 
+        public string Location => Data?.Location ?? Unspecified;
+
+        public int MaxParticipants => Data?.MaxParticipants ?? UnspecifiedInteger;
+
         public SportsCategory SportsCategory { get; set; }
     }
 }

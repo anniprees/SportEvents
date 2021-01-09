@@ -7,8 +7,6 @@ namespace SportEvents.Data
 {
     public sealed class SportsCategoryData : NamedEntityData
     {
-        public string Location { get; set; }
 
-        public int MaxParticipants { get; set; }
     }
 }

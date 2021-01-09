@@ -1,16 +1,62 @@
 ﻿@page
+@using SportEvents.Pages.Extensions
 @model SportEvents.WebApplication.Pages.Events.DetailsModel
 
 @{
-    Layout = "_Details";
+    ViewData["Title"] = "Details";
 }
 
-<body>
-    @Html.DisplayFor(m => m.Item.Id)
-    @Html.DisplayFor(m => m.Item.SportsCategory, Model.GetCategoryName(Model.Item.SportsCategory))
-    @Html.DisplayFor(m => m.Item.EventDate)
-    @Html.DisplayFor(m => m.Item.EventTime)
-</body>
+<h1>Details</h1>
 
-@section Details {
-}
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.SportsCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayControlsFor(m => m.Item.SportsCategory, Model.GetCategoryName(Model.Item.SportsCategory))
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.EventDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.EventDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.EventTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.EventTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.MaxParticipants)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.MaxParticipants)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Item.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

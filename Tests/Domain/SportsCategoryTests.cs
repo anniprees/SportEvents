@@ -13,10 +13,6 @@ namespace Tests.Domain
     public class SportsCategoryTests : SealedClassTests<SportsCategory, NamedEntity<SportsCategoryData>>
     {
         protected override SportsCategory CreateObject() => new SportsCategory(GetRandom.Object<SportsCategoryData>());
-        [TestMethod]
-        public void LocationTest() => IsReadOnlyProperty(obj.Data.Location);
-        [TestMethod]
-        public void MaxParticipantsTest() => IsReadOnlyProperty(obj.Data.MaxParticipants);
     }
 }
 

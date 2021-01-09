@@ -15,6 +15,8 @@ namespace SportEvents.WebApplication.Migrations
                     EventDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EventTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     SportsCategoryId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MaxParticipants = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -54,8 +56,6 @@ namespace SportEvents.WebApplication.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MaxParticipants = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

@@ -12,5 +12,9 @@ namespace SportEvents.Data
         public DateTime? EventTime { get; set; }
 
         public string SportsCategoryId { get; set; }
+
+        public string Location { get; set; }
+
+        public int MaxParticipants { get; set; }
     }
 }

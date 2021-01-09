@@ -18,7 +18,7 @@ namespace SportEvents.Facade.ViewFactories
         {
             var v = new EventView();
             Copy.Members(o?.Data, v);
-            v.SportsCategory = o.SportsCategory.Name;
+            //v.SportsCategory = o?.SportsCategory.Name;
             return v;
         }
 
