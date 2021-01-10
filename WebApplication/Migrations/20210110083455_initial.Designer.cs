@@ -10,8 +10,8 @@ using SportEvents.WebApplication.Data;
 namespace SportEvents.WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210109092212_Initial")]
-    partial class Initial
+    [Migration("20210110083455_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

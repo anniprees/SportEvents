@@ -10,6 +10,7 @@ namespace Tests.Domain
     public class EventRegistrationTests: SealedClassTests<EventRegistration, UniqueEntity<EventRegistrationData>>
     {
         protected override EventRegistration CreateObject() => new EventRegistration(GetRandom.Object<EventRegistrationData>());
+
         [TestMethod] public void EventIdTest() => IsReadOnlyProperty(obj.Data.EventId);
         [TestMethod] public void ParticipantIdTest() => IsReadOnlyProperty(obj.Data.ParticipantId);
 

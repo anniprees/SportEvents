@@ -13,6 +13,12 @@ namespace Tests.Data
         public void EventTimeTest() => IsNullableProperty(() => obj.EventTime, x => obj.EventTime = x);
         [TestMethod]
         public void SportsCategoryIdTest() => IsNullableProperty(() => obj.SportsCategoryId, x => obj.SportsCategoryId = x);
+        [TestMethod]
+        public void LocationTest() => IsNullableProperty(() => obj.Location, x => obj.Location = x);
+        [TestMethod]
+        public void MaxParticipantsTest() => IsProperty(() => obj.MaxParticipants, x => obj.MaxParticipants = x);
     }
 }
+
+
 

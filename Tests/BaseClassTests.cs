@@ -24,6 +24,8 @@ namespace Tests
             Assert.AreEqual(typeof(TBaseClass), type.BaseType);
         }
 
+        protected virtual Type GetBaseClass() => typeof(TBaseClass);
+
         protected static void IsNullableProperty<T>(Func<T> get, Action<T> set)
         {
             IsProperty(get, set);

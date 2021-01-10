@@ -16,8 +16,7 @@ namespace Tests.Data.Common
         }
 
         [TestMethod]
-        public void NameTest()
-            => IsNullableProperty(() => obj.Name, x => obj.Name = x);
+        public void NameTest() => IsNullableProperty(() => obj.Name, x => obj.Name = x);
     }
 }
 

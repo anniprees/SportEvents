@@ -20,7 +20,7 @@ namespace Tests.Domain.Common
             obj = new TestClass(GetRandom.Object<EventData>());
         }
 
-        //[TestMethod]
-        //public void IdTest() => IsReadOnlyProperty(obj.Id);
+        [TestMethod]
+        public void IdTest() => IsReadOnlyProperty(obj.Id);
     }
 }
