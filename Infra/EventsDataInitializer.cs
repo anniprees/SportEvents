@@ -43,16 +43,16 @@ namespace SportEvents.Infra
 
             var events = new[]
             {
-                new EventData{Id = "1", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("05/01/2021 09:00"), Location = "Green Hall"},
-                new EventData{Id = "2", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("06/01/2021 09:00"), Location = "Bright Hall"},
-                new EventData{Id = "3", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("09/01/2021 09:00"), Location = "Hall Hall"},
-                new EventData{Id = "4", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("10/01/2021 09:00"), Location = "Tech Hall"},
-                new EventData{Id = "5", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("12/01/2021 09:00"), Location = "Green Hall"},
-                new EventData{Id = "6", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("14/01/2021 09:00"), Location = "Red Hall"},
-                new EventData{Id = "7", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("15/01/2021 09:00"), Location = "Green Hall"},
-                new EventData{Id = "8", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("16/01/2021 09:00"), Location = "Red Hall"},
-                new EventData{Id = "9", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("17/01/2021 09:00"), Location = "Pristine Hall"},
-                new EventData{Id = "10", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("19/01/2021 09:00"), Location = "Green Hall"},
+                new EventData{Id = "1", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("13/01/2021 09:00"), Location = "Green Hall"},
+                new EventData{Id = "2", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("15/01/2021 09:00"), Location = "Bright Hall"},
+                new EventData{Id = "3", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("15/01/2021 09:00"), Location = "Hall Hall"},
+                new EventData{Id = "4", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("16/01/2021 09:00"), Location = "Tech Hall"},
+                new EventData{Id = "5", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("16/01/2021 09:00"), Location = "Green Hall"},
+                new EventData{Id = "6", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("17/01/2021 09:00"), Location = "Red Hall"},
+                new EventData{Id = "7", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("17/01/2021 09:00"), Location = "Green Hall"},
+                new EventData{Id = "8", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("25/01/2021 09:00"), Location = "Red Hall"},
+                new EventData{Id = "9", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("26/01/2021 09:00"), Location = "Pristine Hall"},
+                new EventData{Id = "10", SportsCategoryId = GetRandom.Int16(1,7).ToString(), Name = "", MaxParticipants = GetRandom.Int16(10,22), EventDate = Convert.ToDateTime("26/01/2021 09:00"), Location = "Green Hall"},
             };
 
             db.Events.AddRange(events);
