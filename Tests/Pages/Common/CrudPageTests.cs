@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AidMethods;
-using Microsoft.AspNetCore.Mvc;
+﻿using AidMethods;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SportEvents.Data;
 using SportEvents.Domain;
@@ -13,56 +8,32 @@ using SportEvents.Facade.ViewFactories;
 using SportEvents.Facade.Views;
 using SportEvents.Pages.Common;
 
-namespace Tests.Pages
+namespace Tests.Pages.Common
 {
     [TestClass]
-    public class CrudPageTests<TClass, TBaseClass> : AbstractClassTests<TClass, TBaseClass>
-        where TClass : CrudPage<IEventsRepository, Event, EventView, EventData>
+    public class CrudPageTests : AbstractPageTests<CrudPage<IEventsRepository, Event, EventView, EventData>, PageModel>
     {
-        internal TestRepository db;
-
-        internal class TestClass : CommonPage<IEventsRepository, Event, EventView, EventData>
-        {
-            protected internal TestClass(IEventsRepository r) : base(r)
-            {
-            }
-
-            public override string ItemId { get; }
-            internal string PageSubTitle { get; set; } = string.Empty;
-            protected override string GetPageUrl() => string.Empty;
-            protected override Event ToObject(EventView v) => EventViewFactory.Create(v);
-            protected override EventView ToView(Event o) => EventViewFactory.Create(o);
-        }
-
-        internal class TestRepository : uniqueRepository<Event, EventData>, IEventsRepository
-        {
-        }
-
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            db = new TestRepository();
+            obj = new TestClass(db);
         }
-
-
-
+        
         [TestMethod]
         public void ItemTest()
         {
             IsProperty(() => obj.Item, x => obj.Item = x);
         }
 
-        //[TestMethod]
-        //public void AddObjectTest()
-        //{
-        //    var idx = db.list.Count;
-        //    obj.Item = GetRandom.Object<SystemOfUnitsView>();
-        //    obj.addObject(fixedFilter, fixedValue).GetAwaiter();
-        //    Assert.AreEqual(fixedFilter, obj.FixedFilter);
-        //    Assert.AreEqual(fixedValue, obj.FixedValue);
-        //    arePropertiesEqual(obj.Item, db.list[idx].Data);
-        //}
+        [TestMethod]
+        public void AddObjectTest()
+        {
+            var idx = db.list.Count;
+            obj.Item = GetRandom.Object<EventView>();
+            obj.AddObject().GetAwaiter();
+            TestArePropertiesEqual(obj.Item, db.list[idx].Data);
+        }
 
         //[TestMethod]
         //public void UpdateObjectTest()

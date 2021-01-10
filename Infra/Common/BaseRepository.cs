@@ -10,7 +10,7 @@ using SportEvents.Domain.Interfaces;
 namespace SportEvents.Infra.Common 
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
-        where TDomain : ValueObject<TData>
+        where TDomain : IUniqueEntity<TData>
         where TData : UniqueEntityData, new() {
 
         protected internal DbContext db;

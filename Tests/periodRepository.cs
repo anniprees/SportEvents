@@ -2,12 +2,13 @@
 using System.Threading.Tasks;
 using SportEvents.Data.Common;
 using SportEvents.Domain.Common;
+using SportEvents.Domain.Interfaces;
 
 namespace Tests
 {
 
     internal abstract class periodRepository<TObj, TData>
-        where TObj : ValueObject<TData>
+        where TObj : IUniqueEntity<TData>
         where TData : UniqueEntityData, new()
     {
 

@@ -5,14 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Pages
+namespace Tests.Pages.Common
 {
-    [TestClass]
-    public class EventRegistrationsPage
-    {
-        [TestMethod]
-        public void Test() => Assert.Inconclusive();
+    //[TestClass]
+    //public class CommonPageTests : CrudPageTests<CommonPageTests, CrudPageTests<>>
+    //{
 
-
-    }
+    //}
 }

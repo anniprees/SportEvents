@@ -1,4 +1,5 @@
 ﻿using AidMethods;
+using SportEvents.Domain.Interfaces;
 
 namespace SportEvents.Domain.Common
 {

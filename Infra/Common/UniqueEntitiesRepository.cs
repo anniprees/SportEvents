@@ -2,11 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using SportEvents.Data.Common;
 using SportEvents.Domain.Common;
+using SportEvents.Domain.Interfaces;
 
 namespace SportEvents.Infra.Common
 {
     public abstract class UniqueEntitiesRepository<TDomain, TData> : BaseRepository<TDomain, TData>
-        where TDomain : ValueObject<TData>
+        where TDomain : IUniqueEntity<TData>
         where TData : UniqueEntityData, new()
     {
         protected UniqueEntitiesRepository(DbContext c, DbSet<TData> s) : base(c, s)
