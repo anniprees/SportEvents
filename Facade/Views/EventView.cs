@@ -8,10 +8,12 @@ namespace SportEvents.Facade.Views
     public sealed class EventView : NamedEntityView
     {
         [Required]
+        [DataType(DataType.Date)]
         [DisplayName("Date")] 
         public DateTime? EventDate { get; set; }
 
-        [DisplayName("Time")] 
+        [DisplayName("Time")]
+        [DataType(DataType.Time)]
         public DateTime? EventTime { get; set; }
 
         [DisplayName("Sports category")] 
