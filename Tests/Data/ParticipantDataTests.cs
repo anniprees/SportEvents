@@ -9,7 +9,6 @@ namespace Tests.Data
     {
         [TestMethod]
         public void EmailTest() => IsNullableProperty(() => obj.Email, x => obj.Email = x);
-
         [TestMethod]
         public void PhoneNumberTest() => IsNullableProperty(() => obj.PhoneNumber, x => obj.PhoneNumber = x);
     }

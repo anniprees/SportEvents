@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SportEvents.Data.Common;
+﻿using SportEvents.Data.Common;
 
 namespace SportEvents.Data
 {

@@ -16,20 +16,20 @@ namespace Tests.Facade.ViewFactoryTests
         [TestInitialize] public void TestInitialize() => type = typeof(EventViewFactory);
         [TestMethod] public void CreateTest() { }
 
-        //[TestMethod]
-        //public void CreateObjectTest()
-        //{
-        //    var view = GetRandom.Object<EventView>();
-        //    var data = EventViewFactory.Create(view).Data;
-        //    TestArePropertiesEqual(view, data);
-        //}
+        [TestMethod]
+        public void CreateObjectTest()
+        {
+            var view = GetRandom.Object<EventView>();
+            var data = EventViewFactory.Create(view).Data;
+            TestArePropertiesEqual(view, data);
+        }
 
-        //[TestMethod]
-        //public void CreateViewTest()
-        //{
-        //    var data = GetRandom.Object<EventData>();
-        //    var view = EventViewFactory.Create(new Event(data));
-        //    TestArePropertiesEqual(view, data);
-        //}
+        [TestMethod]
+        public void CreateViewTest()
+        {
+            var data = GetRandom.Object<EventData>();
+            var view = EventViewFactory.Create(new Event(data));
+            TestArePropertiesEqual(view, data);
+        }
     }
 }

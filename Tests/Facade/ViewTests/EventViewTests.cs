@@ -17,7 +17,13 @@ namespace Tests.Facade.ViewTests
         public void EventTimeTest() => IsNullableProperty<DateTime?>("Time");
 
         [TestMethod]
-        public void SportsCategoryTest() => IsNullableProperty<string>("Sports category");
+        public void SportsCategoryIdTest() => IsNullableProperty<string>("Sports category");
+
+        [TestMethod]
+        public void LocationTest() => IsNullableProperty<string>("Location");
+
+        [TestMethod]
+        public void MaxParticipantsTest() => IsProperty<int>("Number of spots");
 
     }
 }

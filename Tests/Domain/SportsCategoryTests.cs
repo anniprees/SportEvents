@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AidMethods;
+﻿using AidMethods;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SportEvents.Data;
 using SportEvents.Domain;

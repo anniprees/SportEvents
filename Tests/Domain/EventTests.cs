@@ -16,11 +16,14 @@ namespace Tests.Domain
 
         [TestMethod] public void EventTimeTest() => IsReadOnlyProperty(obj.Data.EventTime);
 
+        [TestMethod] public void LocationTest() => IsReadOnlyProperty(obj.Data.Location);
+
+        [TestMethod] public void MaxParticipantsTest() => IsReadOnlyProperty(obj.Data.MaxParticipants);
+
         [TestMethod] public void SportsCategoryIdTest() => IsReadOnlyProperty(obj.Data.SportsCategoryId);
 
         [TestMethod]
-        public void SportsCategoryTest() =>
-            IsReadOnlyProperty(obj, nameof(obj.SportsCategoryId), obj.Data.SportsCategoryId);
+        public void SportsCategoryTest() => IsReadOnlyProperty(obj, nameof(obj.SportsCategoryId), obj.Data.SportsCategoryId);
 
     }
 }

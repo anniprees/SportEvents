@@ -20,7 +20,6 @@
   <ItemGroup>
     <Folder Include="Domain\" />
     <Folder Include="Facade\" />
-    <Folder Include="Infra\" />
   </ItemGroup>
 
   <ItemGroup>
