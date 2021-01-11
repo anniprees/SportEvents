@@ -17,8 +17,8 @@ namespace Tests.Pages.Common
         {
             protected internal TestClass(IEventsRepository r) : base(r) { }
 
-            public override string ItemId { get; }
-            //internal string PageSubTitle { get; set; } = string.Empty;
+            public override string ItemId => Item?.Id ?? string.Empty;
+
             protected internal override string GetPageUrl() => string.Empty;
             protected internal override Event ToObject(EventView v) => EventViewFactory.Create(v);
             protected internal override EventView ToView(Event o) => EventViewFactory.Create(o);
