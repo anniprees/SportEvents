@@ -9,7 +9,7 @@ using SportEvents.Pages.Common;
 namespace Tests.Pages.Common
 {
     public abstract class AbstractPageTests<TClass, TBaseClass> : AbstractClassTests<TClass, TBaseClass>
-    where TClass : CrudPage<IEventsRepository, Event, EventView, EventData>
+    //where TClass : CrudPage<IEventsRepository, Event, EventView, EventData>
     {
         internal TestRepository db;
 

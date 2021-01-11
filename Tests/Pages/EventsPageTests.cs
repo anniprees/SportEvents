@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SportEvents.Data;
+using SportEvents.Domain;
+using SportEvents.Domain.Interfaces;
+using SportEvents.Facade.Views;
+using SportEvents.Pages;
+using SportEvents.Pages.Common;
+using Tests.Pages.Common;
 
 namespace Tests.Pages
-{
-    class EventsPageTests
+{[TestClass]
+    public class EventsPageTests 
     {
     }
 }

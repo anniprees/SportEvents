@@ -10,7 +10,7 @@ using Tests.Pages.Common;
 namespace Tests.Pages
 {
     [TestClass]
-    public class SportsCategoriesPageTests : AbstractPageTests<SportsCategoriesPage, CommonPage<ISportsCategoriesRepository, SportsCategory, SportsCategoryView, SportsCategoryData>>
+    public class EventRegistrationsPageTests : AbstractPageTests<EventRegistrationsPage, CommonPage<IEventRegistrationsRepository, EventRegistration, EventRegistrationView, EventRegistrationData>>
     {
     }
 }

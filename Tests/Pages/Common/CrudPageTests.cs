@@ -1,4 +1,5 @@
-﻿using AidMethods;
+﻿using System.Threading.Tasks;
+using AidMethods;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SportEvents.Data;
@@ -25,6 +26,11 @@ namespace Tests.Pages.Common
         {
             IsProperty(() => obj.Item, x => obj.Item = x);
         }
+        [TestMethod]
+        public void ItemsTest()
+        {
+            IsReadOnlyProperty(obj, nameof(obj.Items), null);
+        }
 
         [TestMethod]
         public void AddObjectTest()
@@ -35,63 +41,53 @@ namespace Tests.Pages.Common
             TestArePropertiesEqual(obj.Item, db.list[idx].Data);
         }
 
-        //[TestMethod]
-        //public void UpdateObjectTest()
-        //{
-        //    GetObjectTest();
-        //    var idx = GetRandom.Int32(0, db.list.Count);
-        //    var itemId = db.list[idx].Data.Id;
-        //    obj.Item = GetRandom.Object<SystemOfUnitsView>();
-        //    obj.Item.Id = itemId;
-        //    obj.updateObject(fixedFilter, fixedValue).GetAwaiter();
-        //    arePropertiesEqual(db.list[^1].Data, obj.Item);
-        //}
 
-        //[TestMethod]
-        //public void GetObjectTest()
-        //{
-        //    var count = GetRandom.UInt8(5, 10);
-        //    var idx = GetRandom.UInt8(0, count);
-        //    for (var i = 0; i < count; i++) AddObjectTest();
-        //    var item = db.list[idx];
-        //    obj.getObject(item.Data.Id, fixedFilter, fixedValue).GetAwaiter();
-        //    Assert.AreEqual(count, db.list.Count);
-        //    arePropertiesEqual(item.Data, obj.Item);
-        //}
+        [TestMethod]
+        public void GetObjectTest()
+        {
+            var count = GetRandom.UInt8(5, 10);
+            var index = GetRandom.UInt8(0, count);
+            for (var i = 0; i < count; i++) AddObjectTest();
+            var item = db.list[index];
+            obj.GetObject(item.Data.Id).GetAwaiter();
+            Assert.AreEqual(count, db.list.Count);
+            TestArePropertyValuesEqual(item.Data, obj.Item);
+        }
 
-        //[TestMethod]
-        //public void DeleteObjectTest()
-        //{
-        //    AddObjectTest();
-        //    obj.deleteObject(obj.Item.Id, fixedFilter, fixedValue).GetAwaiter();
-        //    Assert.AreEqual(fixedFilter, obj.FixedFilter);
-        //    Assert.AreEqual(fixedValue, obj.FixedValue);
-        //    Assert.AreEqual(0, db.list.Count);
-        //}
+        [TestMethod]
+        public void UpdateObjectTest()
+        {
+            GetObjectTest();
+            var index = GetRandom.Int32(0, db.list.Count);
+            var itemId = db.list[index].Data.Id;
+            obj.Item = GetRandom.Object<EventView>();
+            obj.Item.Id = itemId;
+            obj.UpdateObject().GetAwaiter();
+            TestArePropertyValuesEqual(db.list[^1].Data, obj.Item);
+        }
 
-        //[TestMethod]
-        //public void ToViewTest()
-        //{
-        //    var d = GetRandom.Object<SystemOfUnitsData>();
-        //    var v = obj.toView(new SystemOfUnits(d));
-        //    arePropertiesEqual(d, v);
-        //}
+        [TestMethod]
+        public void DeleteObjectTest()
+        {
+            AddObjectTest();
+            obj.DeleteObject(obj.Item.Id).GetAwaiter();
+            Assert.AreEqual(0, db.list.Count);
+        }
 
-        //[TestMethod]
-        //public void ToObjectTest()
-        //{
-        //    var v = GetRandom.Object<SystemOfUnitsView>();
-        //    var o = obj.toObject(v);
-        //    arePropertiesEqual(v, o.Data);
-        //}
+        [TestMethod]
+        public void ToObjectTest()
+        {
+            var v = GetRandom.Object<EventView>();
+            var o = obj.ToObject(v);
+            TestArePropertyValuesEqual(v, o.Data);
+        }
 
-        //[TestMethod]
-        //public void ItemIdTest()
-        //{
-        //    obj.Item = GetRandom.Object<SystemOfUnitsView>();
-        //    Assert.AreEqual(obj.Item.GetId(), obj.ItemId);
-        //}
-
-
+        [TestMethod]
+        public void ToViewTest()
+        {
+            var d = GetRandom.Object<EventData>();
+            var v = obj.ToView(new Event(d));
+            TestArePropertyValuesEqual(d, v);
+        }
     }
 }
