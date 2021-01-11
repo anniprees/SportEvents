@@ -15,16 +15,19 @@ namespace Tests.Pages.Common
 
         internal class TestClass : CommonPage<IEventsRepository, Event, EventView, EventData>
         {
-            protected internal TestClass(IEventsRepository r) : base(r) { }
+            protected internal TestClass(IEventsRepository r) : base(r)
+            {
+                PageTitle = "Events";
+            }
 
-            public override string ItemId { get; }
-            //internal string PageSubTitle { get; set; } = string.Empty;
+            public override string ItemId => Item?.Id ?? string.Empty;
+
             protected internal override string GetPageUrl() => string.Empty;
             protected internal override Event ToObject(EventView v) => EventViewFactory.Create(v);
             protected internal override EventView ToView(Event o) => EventViewFactory.Create(o);
         }
 
-        internal class TestRepository : uniqueRepository<Event, EventData>, IEventsRepository
+        internal class TestRepository : BaseTestRepository<Event, EventData>, IEventsRepository
         {
         }
 

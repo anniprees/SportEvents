@@ -20,8 +20,12 @@ namespace Tests.Pages.Common
             base.TestInitialize();
             obj = new TestClass(new TestRepository());
         }
-
-        [TestMethod] public void ItemIdTest()=> Assert.Inconclusive();
+        [TestMethod]
+        public void ItemIdTest()
+        {
+            obj.Item = GetRandom.Object<EventView>();
+            Assert.AreEqual(obj.Item.Id, obj.ItemId);
+        }
         [TestMethod] public void PageTitleTest() => IsNullableProperty(() => obj.PageTitle, x => obj.PageTitle = x);
         [TestMethod] public void PageSubTitleTest() => IsReadOnlyProperty(obj, nameof(obj.PageSubTitle), obj.GetPageSubTitle());
         [TestMethod] public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());

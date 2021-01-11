@@ -10,12 +10,7 @@ namespace Tests
             {
                 Assert.IsTrue(type.IsAbstract);
             }
-            protected void IsAbstractMethod(string name)
-            {
-                var i = type.GetMethod(name);
-                Assert.IsNotNull(i);
-                Assert.IsTrue(i.IsAbstract);
-            }
+
         }
 }
 
