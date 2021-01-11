@@ -25,6 +25,9 @@ namespace Tests.Facade.ViewTests
         [TestMethod]
         public void MaxParticipantsTest() => IsProperty<int>("Number of spots");
 
+        [TestMethod]
+        public void RegisteredParticipantsTest() => IsProperty<int>("Registrations");
+
     }
 }
 

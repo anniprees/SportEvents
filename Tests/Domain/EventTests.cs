@@ -25,6 +25,9 @@ namespace Tests.Domain
         [TestMethod]
         public void SportsCategoryTest() => IsReadOnlyProperty(obj, nameof(obj.SportsCategoryId), obj.Data.SportsCategoryId);
 
+        [TestMethod] public void RegisteredParticipantsTest() => Assert.Inconclusive();
+        [TestMethod] public void RegistrationsTest() => Assert.Inconclusive();
+
     }
 }
    

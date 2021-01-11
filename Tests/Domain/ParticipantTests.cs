@@ -11,9 +11,8 @@ namespace Tests.Domain
     public class ParticipantTests : SealedClassTests<Participant, NamedEntity<ParticipantData>>
     {
         protected override Participant CreateObject() => new Participant(GetRandom.Object<ParticipantData>());
-        [TestMethod]
-        public void EmailTest() => IsReadOnlyProperty(obj.Data.Email);
-        [TestMethod]
-        public void PhoneNumberTest() => IsReadOnlyProperty(obj.Data.PhoneNumber);
+        [TestMethod] public void EmailTest() => IsReadOnlyProperty(obj.Data.Email);
+        [TestMethod] public void PhoneNumberTest() => IsReadOnlyProperty(obj.Data.PhoneNumber);
+        [TestMethod] public void RegistrationsTest() => Assert.Inconclusive();
     }
 }
