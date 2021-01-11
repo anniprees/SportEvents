@@ -1,4 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.EntityFrameworkCore;
 using SportEvents.Domain.Interfaces;
 using SportEvents.Pages;
 
@@ -13,5 +16,15 @@ namespace SportEvents.WebApplication.Pages.EventsClient
         {
             await GetList();
         }
+        //public async Task OnPostRegisterAsync(string id)
+        //{
+        //    var e = await db.Get(id);
+
+        //    if (id != null)
+        //    {
+        //        Item.Id = id;
+        //        RedirectToPage("./Register");
+        //    }
+        //}
     }
 }

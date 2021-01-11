@@ -25,7 +25,7 @@ namespace SportEvents.Pages
             Participants = CreateSelectList<Participant, ParticipantData>(p);
         }
 
-        public override string ItemId => Item is null ? string.Empty : Item.GetId();
+        public override string ItemId => Item?.Id ?? string.Empty;
 
         protected internal override string GetPageUrl() => "/Sport/Registrations";
 

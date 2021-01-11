@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SportEvents.Domain.Interfaces;
 using SportEvents.Pages;
 
@@ -10,9 +11,16 @@ namespace SportEvents.WebApplication.Pages.EventsClient
         public RegisterModel(IEventRegistrationsRepository r, IEventsRepository e, IParticipantsRepository p)
          : base(r, e, p) { }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet(string id)
         {
+            if (id == null) { return NotFound(); }
+
+            await GetObject(id);
+            Item.EventId = id;
+
+            if (Item == null) { return NotFound(); }
             return Page();
+
         }
 
         public async Task<IActionResult> OnPostAsync()

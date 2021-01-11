@@ -15,19 +15,16 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="@Model.Item.EventId" class="control-label"></label>
-                <input asp-for="@Model.Item.EventId" class="form-control" />
-                <span asp-validation-for="@Model.Item.EventId" class="text-danger"></span>
+                <label asp-for="@Model.Item.Registrations" class="control-label"></label>
+                <input asp-for="@Model.Item.Registrations" class="form-control" readonly="true"/>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Item.ParticipantId" class="control-label"></label>
-                <input asp-for="@Model.Item.ParticipantId" class="form-control" />
-                <span asp-validation-for="@Model.Item.ParticipantId" class="text-danger"></span>
+                <a>@Html.DisplayControlsFor(m => m.Item.EventId, Model.GetEventName(Model.Item.EventId))</a>
+                <input asp-for="@Model.Item.EventId" class="form-control" readonly="true" hidden="true"/>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Item.Id" class="control-label"></label>
-                <input asp-for="@Model.Item.Id" class="form-control" />
-                <span asp-validation-for="@Model.Item.Id" class="text-danger"></span>
+                <a>@Html.DisplayControlsFor(m => m.Item.ParticipantId, Model.GetParticipantName(Model.Item.ParticipantId))</a>
+                <input asp-for="@Model.Item.ParticipantId" class="form-control" readonly="true" hidden="true"/>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

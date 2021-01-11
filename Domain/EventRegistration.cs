@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using AidMethods;
 using SportEvents.Data;
 using SportEvents.Domain.Common;
@@ -11,11 +13,26 @@ namespace SportEvents.Domain
 
         public string EventId => Data?.EventId ?? Unspecified;
         public string ParticipantId => Data?.ParticipantId ?? Unspecified;
+        public Event Event { get; set; }
+        public Participant Participant { get; set; }
 
-        public string Id => Compose.Id(EventId, ParticipantId);
+        //public int Registrations
+        //{
+        //    get
+        //    {
+        //        var e = Events.Select(x => x.Id == EventId);
+        //        return e.Count();
+        //    }
+        //}
 
-        public ICollection<Event> Events { get; set; } = new List<Event>();
-        public ICollection<Participant> Participants { get; set; } = new List<Participant>();
+        //public bool isWithAvailablePlaces
+        //{
+        //    get
+        //    {
+        //        var openPlaces = Events.Where(x => x.Id == EventId).Select(x=> x.MaxParticipants).FirstOrDefault();
+        //        return openPlaces > Registrations;
+        //    }
+        //}
 
     }
 }
