@@ -14,23 +14,6 @@ namespace AidMethods
             return Safe.Run(() => name(ex?.Body), string.Empty);
         }
 
-        public static string Name<T, TResult>(Expression<Func<T, TResult>> ex)
-        {
-            return Safe.Run(() => name(ex?.Body), string.Empty);
-        }
-
-        public static string Name<T>(Expression<Action<T>> ex)
-        {
-            return Safe.Run(() => name(ex?.Body), string.Empty);
-        }
-
-        public static string DisplayName<T>(Expression<Func<T, object>> ex)
-        {
-            return Safe.Run(() => {
-                var name = Name(ex);
-                return DisplayName<T>(name);
-            }, string.Empty);
-        }
         public static string DisplayName<T>(string propertyName)
         {
             return Safe.Run(() => {

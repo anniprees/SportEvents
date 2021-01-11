@@ -42,13 +42,7 @@ namespace AidMethods
             return Safe.Run(() => typeof(T).GetProperty(name), null);
         }
 
-        public static PropertyInfo Property<T>(Expression<Func<T, object>> ex)
-        {
-            var name = GetMember.Name(ex);
-            return Safe.Run(() => typeof(T).GetProperty(name), null);
-        }
-
-        private static void RemoveSurrogates(IList<MemberInfo> l)
+       private static void RemoveSurrogates(IList<MemberInfo> l)
         {
             for (var i = l.Count; i > 0; i--)
             {
@@ -68,41 +62,6 @@ namespace AidMethods
             if (n.Contains(r)) return true;
             if (n.Contains(v)) return true;
             return n.Contains(t) || n.Contains(c);
-        }
-
-        public static List<object> ReadWritePropertyValues(object obj)
-        {
-            var l = new List<object>();
-            if (obj is null) return l;
-            foreach (var p in Properties(obj.GetType()))
-            {
-                if (!p.CanWrite) continue;
-                AddValue(p, obj, l);
-            }
-
-            return l;
-        }
-
-        private static void AddValue(PropertyInfo p, object o, List<object> l)
-        {
-            var indexer = p.GetIndexParameters();
-            if (indexer.Length == 0) l.Add(p.GetValue(o));
-            else
-            {
-                var i = 0;
-                while (true)
-                {
-                    try
-                    {
-                        l.Add(p.GetValue(o, new object[] {i++}));
-                    }
-                    catch
-                    {
-                        l.Add(i);
-                        return;
-                    }
-                }
-            }
         }
 
     }
