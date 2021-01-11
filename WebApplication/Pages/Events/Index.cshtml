@@ -29,6 +29,9 @@
                 @Html.DisplayNameFor(m => m.Item.Location)
             </th>
             <th>
+                @Html.DisplayNameFor(m => m.Item.RegisteredParticipants)
+            </th>
+            <th>
                 @Html.DisplayNameFor(m => m.Item.MaxParticipants)
             </th>
         </tr>
@@ -51,6 +54,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegisteredParticipants)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MaxParticipants)

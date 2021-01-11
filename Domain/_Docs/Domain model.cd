@@ -1,67 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SportEvents.Domain.Common.ValueObject&lt;TData&gt;">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+  <Class Name="SportEvents.Domain.EventRegistration">
+    <Position X="10.75" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAACBAAAAAQAAABAAAAAQAAAAAAA=</HashCode>
-      <FileName>Common\ValueObject.cs</FileName>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAKAAAAAAAAA=</HashCode>
+      <FileName>EventRegistration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SportEvents.Domain.Common.UniqueEntity&lt;T&gt;">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+  <Class Name="SportEvents.Domain.Participant">
+    <Position X="7.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\UniqueEntity.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="SportEvents.Domain.Common.NamedEntity&lt;T&gt;">
-    <Position X="3.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\NamedEntity.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="SportEvents.Domain.Common.BaseEntity">
-    <Position X="11.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAIAQACAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\BaseEntity.cs</FileName>
+      <HashCode>AAAAAIAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Participant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SportEvents.Domain.Event">
-    <Position X="3" Y="3.5" Width="1.5" />
+    <Position X="13.5" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQABAAAAAAACAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAAQAJAAAAAAACAAAAAAAAAAABACAA=</HashCode>
       <FileName>Event.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="SportsCategory" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="SportEvents.Domain.EventRegistration">
-    <Position X="8.25" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAgAAAAAAAAAAAAAAAAAgAAAAAAAKAAAAAAAAA=</HashCode>
-      <FileName>EventRegistration.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Events" />
-      <Property Name="Participants" />
-    </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="SportEvents.Domain.Participant">
-    <Position X="5.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Participant.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SportEvents.Domain.SportsCategory">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="17" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SportsCategory.cs</FileName>
     </TypeIdentifier>
   </Class>

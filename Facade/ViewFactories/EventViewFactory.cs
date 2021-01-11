@@ -18,6 +18,7 @@ namespace SportEvents.Facade.ViewFactories
         {
             var v = new EventView();
             Copy.Members(o?.Data, v);
+            v.RegisteredParticipants = o.RegisteredParticipants;
             return v;
         }
 

@@ -24,5 +24,10 @@ namespace SportEvents.Facade.Views
 
         [DisplayName("Number of spots")]
         public int MaxParticipants { get; set; }
+
+        [DisplayName("Registrations")]
+        public int RegisteredParticipants { get; set; }
+
+
     }
 }
