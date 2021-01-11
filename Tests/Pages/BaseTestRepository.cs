@@ -9,42 +9,42 @@ namespace Tests.Pages
         where TObj : UniqueEntity<TData>
         where TData : UniqueEntityData, new()
     {
-       internal readonly List<TObj> List;
+       internal readonly List<TObj> list;
 
         public BaseTestRepository()
         {
-            List = new List<TObj>();
+            list = new List<TObj>();
         }
 
         public async Task<List<TObj>> Get()
         {
             await Task.CompletedTask;
-            return List;
+            return list;
         }
 
         public async Task<TObj> Get(string id)
         {
             await Task.CompletedTask;
-            return List.Find(x => x.Data.Id == id);
+            return list.Find(x => x.Data.Id == id);
         }
 
         public async Task Delete(string id)
         {
             await Task.CompletedTask;
-            var obj = List.Find(x => x.Data.Id == id);
-            List.Remove(obj);
+            var obj = list.Find(x => x.Data.Id == id);
+            list.Remove(obj);
         }
 
         public async Task Add(TObj obj)
         {
             await Task.CompletedTask;
-            List.Add(obj);
+            list.Add(obj);
         }
 
         public async Task Update(TObj obj)
         {
             await Delete(obj.Data.Id);
-            List.Add(obj);
+            list.Add(obj);
         }
     }
 }
