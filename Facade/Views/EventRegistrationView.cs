@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using AidMethods;
 using SportEvents.Facade.Common;
 
@@ -8,9 +9,18 @@ namespace SportEvents.Facade.Views
     {
         [DisplayName("Event")] public string EventId { get; set; }
         [DisplayName("Participant")] public string ParticipantId { get; set; }
-        public string Registrations { get; set; }
-        public bool isWithAvailablePlaces { get; set; }
+        public DateTime? EventDate { get; set; }
         public int MaxParticipants { get; set; }
+        public int Registrations { get; set; }
+
+        public bool isFull
+        {
+            get
+            {
+                if (Registrations >= MaxParticipants) return true;
+                return false;
+            }
+        }
 
     }
 }

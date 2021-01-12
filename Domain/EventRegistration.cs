@@ -16,23 +16,5 @@ namespace SportEvents.Domain
         public Event Event { get; set; }
         public Participant Participant { get; set; }
 
-        //public int Registrations
-        //{
-        //    get
-        //    {
-        //        var e = Events.Select(x => x.Id == EventId);
-        //        return e.Count();
-        //    }
-        //}
-
-        //public bool isWithAvailablePlaces
-        //{
-        //    get
-        //    {
-        //        var openPlaces = Events.Where(x => x.Id == EventId).Select(x=> x.MaxParticipants).FirstOrDefault();
-        //        return openPlaces > Registrations;
-        //    }
-        //}
-
     }
 }
