@@ -12,20 +12,23 @@ using Tests.Pages.Common;
 namespace Tests.Pages
 {
     [TestClass]
-    public class EventRegistrationsPageTests : AbstractPageTests<EventRegistrationsPage, CommonPage<IEventRegistrationsRepository, EventRegistration, EventRegistrationView, EventRegistrationData>>
+    public class EventRegistrationsPageTests : AbstractPageTests<EventRegistrationsPage, 
+        CommonPage<IEventRegistrationsRepository, EventRegistration, EventRegistrationView, EventRegistrationData>>
     {
         private class TestClass : EventRegistrationsPage
         {
             internal TestClass(IEventRegistrationsRepository r, IEventsRepository p, IParticipantsRepository e)  : base(r, p, e) { }
         }
 
-        private class EventRegistrationsRepository : BaseTestRepository<EventRegistration, EventRegistrationData>, IEventRegistrationsRepository { }
+        private class EventRegistrationsRepository : BaseTestRepository<EventRegistration, EventRegistrationData>, 
+            IEventRegistrationsRepository { }
         private class EventsRepository : BaseTestRepository<Event, EventData>, IEventsRepository { }
         private class ParticipantsRepository : BaseTestRepository<Participant, ParticipantData>, IParticipantsRepository { }
 
         private EventRegistrationsRepository _registrations;
         private ParticipantsRepository _participants;
         private EventsRepository _events;
+        private EventsRepository _openEvents;
         private EventData _eventData;
         private ParticipantData _participantData;
 
@@ -46,6 +49,8 @@ namespace Tests.Pages
             _participants.Add(b).GetAwaiter();
             AddRandomParticipants();
             obj = new TestClass(_registrations, _events, _participants);
+
+            _openEvents = new EventsRepository();
         }
 
         private void AddRandomEvents()

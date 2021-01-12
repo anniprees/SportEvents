@@ -17,7 +17,7 @@ namespace SportEvents.WebApplicationID.Pages.Admin.Registrations
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (Item.isFull) return RedirectToPage("./Index");
+            if (Item.IsFull) return RedirectToPage("./Index");
                 if (!await AddObject()) return Page();
                     return RedirectToPage("./Index");
         }
