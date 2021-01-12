@@ -52,11 +52,6 @@ namespace AidMethods
             return min - d * min + d * max;
         }
 
-        public static T Enum<T>()
-        {
-            return (T)Enum(typeof(T));
-        }
-
         private static object Enum(Type t)
         {
             var count = GetEnum.Count(t);
@@ -196,20 +191,6 @@ namespace AidMethods
             SetRandom.Values(o);
             return o;
         }
-        public static string Email()
-        {
-            return $"{String()}.{String()}@{String()}.{String()}";
-        }
-        public static string Password()
-        {
-            return $"{String()}{Char('\x20', '\x2f')}{UInt32().ToString()}.{String().ToUpper()}";
-        }
 
-        public static List<T> List<T>(Func<T> func)
-        {
-            var list = new List<T>();
-            for (var i = 0; i < UInt8(0, 10); i++) list.Add(func());
-            return list;
-        }
     }
 }
