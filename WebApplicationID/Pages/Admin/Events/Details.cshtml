@@ -1,0 +1,62 @@
+﻿@page
+@using SportEvents.Pages.Extensions
+@model SportEvents.WebApplicationID.Pages.Admin.Events.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.SportsCategoryId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayControlsFor(m => m.Item.SportsCategoryId, Model.GetCategoryName(Model.Item.SportsCategoryId))
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.EventDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.EventDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.EventTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.EventTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Item.MaxParticipants)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Item.MaxParticipants)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Item.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

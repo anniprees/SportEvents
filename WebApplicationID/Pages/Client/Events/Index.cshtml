@@ -1,0 +1,61 @@
+﻿@page
+@model SportEvents.WebApplicationID.Pages.Client.Events.EventsClient
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Upcoming Events</h1>
+
+<p>
+    <a asp-page="/Client/Profile/Create">Create Profile</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.Item.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Item.SportsCategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Item.EventDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Item.EventTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Item.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Item.MaxParticipants)
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    @Html.Raw(Model.GetCategoryName(item.Name))
+                </td>
+                <td>
+                    @Html.Raw(Model.GetCategoryName(item.SportsCategoryId))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxParticipants)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
