@@ -10,7 +10,7 @@ using SportEvents.WebApplicationID.Data;
 namespace SportEvents.WebApplicationID.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210112094349_initial")]
+    [Migration("20210112112715_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
