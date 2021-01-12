@@ -16,15 +16,5 @@ namespace SportEvents.WebApplication.Pages.EventsClient
         {
             await GetList();
         }
-        //public async Task OnPostRegisterAsync(string id)
-        //{
-        //    var e = await db.Get(id);
-
-        //    if (id != null)
-        //    {
-        //        Item.Id = id;
-        //        RedirectToPage("./Register");
-        //    }
-        //}
     }
 }

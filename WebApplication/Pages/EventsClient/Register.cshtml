@@ -1,42 +1,7 @@
 ﻿@page
 @using SportEvents.Pages.Extensions
-@model SportEvents.WebApplication.Pages.EventsClient.RegisterModel
+@model SportEvents.Pages.EventsPage
 
 @{
-    ViewData["Title"] = "Register";
-}
-
-<h1>Create</h1>
-
-<h4>Event</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="@Model.Item.Registrations" class="control-label"></label>
-                <input asp-for="@Model.Item.Registrations" class="form-control" readonly="true"/>
-            </div>
-            <div class="form-group">
-                <a>@Html.DisplayControlsFor(m => m.Item.EventId, Model.GetEventName(Model.Item.EventId))</a>
-                <input asp-for="@Model.Item.EventId" class="form-control" readonly="true" hidden="true"/>
-            </div>
-            <div class="form-group">
-                <a>@Html.DisplayControlsFor(m => m.Item.ParticipantId, Model.GetParticipantName(Model.Item.ParticipantId))</a>
-                <input asp-for="@Model.Item.ParticipantId" class="form-control" readonly="true" hidden="true"/>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    Layout = "_Layout";
 }
