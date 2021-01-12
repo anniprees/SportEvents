@@ -8,7 +8,9 @@ namespace SportEvents.WebApplicationID.Pages.Admin.Registrations
     public class CreateModel : EventRegistrationsPage
     {
         public CreateModel(IEventRegistrationsRepository r, IEventsRepository e, IParticipantsRepository p)
-         : base(r, e, p) { }
+            : base(r, e, p)
+        {
+        }
 
         public IActionResult OnGet()
         {
@@ -17,9 +19,8 @@ namespace SportEvents.WebApplicationID.Pages.Admin.Registrations
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (Item.IsFull) return RedirectToPage("./Index");
-                if (!await AddObject()) return Page();
-                    return RedirectToPage("./Index");
+            if (!await AddObject()) return Page();
+            return RedirectToPage("./Index");
         }
     }
 }

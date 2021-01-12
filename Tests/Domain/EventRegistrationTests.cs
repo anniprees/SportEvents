@@ -16,6 +16,7 @@ namespace Tests.Domain
 
         [TestMethod]
         public void EventTest() => IsReadOnlyProperty(obj, nameof(obj.EventId), obj.Data.EventId);
+
         [TestMethod]
         public void ParticipantTest() => IsReadOnlyProperty(obj, nameof(obj.ParticipantId), obj.Data.ParticipantId);
     }

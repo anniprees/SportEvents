@@ -19,12 +19,6 @@
             <th>
                 @Html.DisplayNameFor(m => m.Item.ParticipantId)
             </th>
-            <th>
-                @Html.DisplayNameFor(m => m.Item.EventDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(m => m.Item.Registrations)
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -36,12 +30,6 @@
                 </td>
                 <td>
                     @Html.Raw(Model.GetParticipantName(item.ParticipantId))
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Registrations)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

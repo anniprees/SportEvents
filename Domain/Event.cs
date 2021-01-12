@@ -30,10 +30,9 @@ namespace SportEvents.Domain
         {
             get
             {
-                var i = Registrations.Where(x=>x.EventId == Id).Select(x=>x.Id).Count();
+                var i = Registrations.Where(x=> x.EventId == Id).Select(x=>x.Id).Count();
                 return i;
             }
         }
-
     }
 }

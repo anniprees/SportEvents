@@ -18,9 +18,6 @@ namespace SportEvents.Facade.ViewFactories
         {
             var v = new EventRegistrationView();
             Copy.Members(o?.Data, v);
-            v.EventDate = o?.Event.EventDate;
-            v.MaxParticipants = o.Event.MaxParticipants;
-            v.Registrations = o.Event.RegisteredParticipants;
             return v;
         }
     }

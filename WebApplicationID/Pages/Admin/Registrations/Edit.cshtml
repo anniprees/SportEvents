@@ -22,11 +22,6 @@
             @Html.EditControlsForDropDown(m => m.Item.EventId, Model.Events)
             @Html.EditControlsForDropDown(m => m.Item.ParticipantId, Model.Participants)
             <div class="form-group">
-                <label asp-for="@Model.Item.MaxParticipants" class="control-label"></label>
-                <input asp-for="@Model.Item.MaxParticipants" class="form-control" />
-                <span asp-validation-for="@Model.Item.MaxParticipants" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SportEvents.Data;
@@ -36,10 +37,11 @@ namespace SportEvents.Pages
 
         protected internal static IEnumerable<SelectListItem> CreateOpenEventsSelect(IRepository<Event> r)
         {
-            var items = r.Get().GetAwaiter().GetResult();
-            return items.Where(x=> x.RegisteredParticipants < x.MaxParticipants)
-                .OrderBy(x=>x.EventDate)
-                .Select(m => new SelectListItem(m.Data.Name, m.Data.Id)).ToList();
+            var events = r.Get().GetAwaiter().GetResult();
+            return (from e in events
+                    where e.RegisteredParticipants < e.MaxParticipants
+                    select
+                         new SelectListItem(e.Data.Name, e.Data.Id)).ToList();
         }
 
         public string GetEventName(string eventId)

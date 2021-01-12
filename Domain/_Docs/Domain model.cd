@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SportEvents.Domain.EventRegistration">
-    <Position X="10.75" Y="0.75" Width="1.75" />
+    <Position X="3" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAKAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAgAAAAAAAAAAAAAAAAAgAAAAAAAKAAAAAACAA=</HashCode>
       <FileName>EventRegistration.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SportEvents.Domain.Participant">
-    <Position X="7.75" Y="2.5" Width="1.5" />
+    <Position X="0.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAACAAAAAAAAAAQAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Participant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SportEvents.Domain.Event">
-    <Position X="13.5" Y="1.75" Width="2" />
+    <Position X="6" Y="2" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAAQAJAAAAAAACAAAAAAAAAAABACAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAAQAJAAAABAACAAAAAAAAABABACAA=</HashCode>
       <FileName>Event.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -25,7 +25,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SportEvents.Domain.SportsCategory">
-    <Position X="17" Y="1.75" Width="1.5" />
+    <Position X="9.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SportsCategory.cs</FileName>

@@ -19,7 +19,7 @@
                 <input asp-for="@Model.Item.Id" class="form-control" />
                 <span asp-validation-for="@Model.Item.Id" class="text-danger"></span>
             </div>
-            @Html.EditControlsForDropDown(m => m.Item.EventId, Model.Events)
+            @Html.EditControlsForDropDown(m => m.Item.EventId, Model.OpenEvents)
             @Html.EditControlsForDropDown(m => m.Item.ParticipantId, Model.Participants)
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -3,18 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SportEvents.WebApplicationID.Data;
-using WebApplicationID.Data;
 
-namespace WebApplicationID.Data.Migrations
+namespace SportEvents.WebApplicationID.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210111204213_initial")]
-    partial class initial
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,16 +249,16 @@ namespace WebApplicationID.Data.Migrations
 
             modelBuilder.Entity("SportEvents.Data.EventRegistrationData", b =>
                 {
-                    b.Property<string>("EventId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ParticipantId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("EventId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EventId", "ParticipantId");
+                    b.Property<string>("ParticipantId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Registrations");
                 });

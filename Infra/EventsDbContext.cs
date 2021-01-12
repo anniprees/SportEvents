@@ -23,8 +23,7 @@ namespace SportEvents.Infra
         public static void InitializeTables(ModelBuilder b)
         {
             b.Entity<EventData>().ToTable(nameof(Events));
-            b.Entity<EventRegistrationData>().ToTable(nameof(Registrations))
-                .HasKey(x => new {x.EventId, x.ParticipantId});
+            b.Entity<EventRegistrationData>().ToTable(nameof(Registrations));
             b.Entity<ParticipantData>().ToTable(nameof(Participants));
             b.Entity<SportsCategoryData>().ToTable(nameof(SportsCategories));
         }
